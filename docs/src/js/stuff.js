@@ -1,0 +1,1 @@
+var helloJS = "Aloha JavaScript";
