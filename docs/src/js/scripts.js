@@ -1,28 +1,31 @@
 const init = () => {
-	var gD = parseLS("game_data");
-
-	if(!gD || gD === null) {
-		LSinit("game_data",gameData);
-
-		gD = parseLS("game_data");
-		bodyBulld(gD);
-	} else {
-		bodyBulld(gD);
-	}
+	bodyBulld();
 },
-bodyBulld = (gD) => {
-	const container = createEle("div");
+bodyBulld = () => {
+	const container = createEle("div"),
+	      logger = createEle("div"),
+	      settings = createEle("div"),
+	      eggsCell = createEle("span"),
+	      mat = createEle("div");
 
 	//
-	for (var i = 0; i < btn_names.length; i++) {
-		const btns = createEle("button");
+	eggsCell.innerHTML = "EGGS: ";
+	eggsCell.className = "eggsCell w3-white w3-card-2 w3-padding";
 
-		btns.innerHTML = btn_names[i];
-		container.append(btns);
-	}
-	container.className = "container";
+	settings.append(eggsCell);
+	settings.className = "settings w3-container w3-grey w3-card-2 w3-padding";
 
-	body.append(container);
+	mat.innerHTML = "no light";
+	mat.className = "mat w3-contain w3-white w3-padding w3-card-2";
+
+	container.append(settings,mat);
+	container.className = "container w3-container w3-white w3-padding";
+
+	logger.innerHTML = " logger";
+	logger.className = "logger w3-white w3-bottom w3-text-grey";
+
+	body.append(container,logger);
+	body.className = "w3-container";
 };
 window.onload = () => {
 	init();
