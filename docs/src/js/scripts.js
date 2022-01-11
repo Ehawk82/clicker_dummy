@@ -30,25 +30,26 @@ bodyBulld = (gd) => {
 	settings.className = "settings w3-contain";
 
 	playBox.innerHTML = "playbox";
-	playBox.className = "playBox w3-card-4 w3-container w3-white w3-half w3-margin";
+	playBox.className = "playBox w3-card-4 w3-container w3-white w3-margin";
 
-	for (var i = 0; i < btns.length; i++) {
+	for (var i = 1; i < btns.length; i++) {
 		const btnHolder = createEle("p"),
 			  addBtnLabel = createEle("div"),
 			  addBtnTitle = createEle("span"),
 			  addBtnDetails = createEle("div"),
 			  addBtn = createEle("button");
 		//
+		let z = i + 1;
 		for (var k = 0; k < 3; k++) {
 			const detailRow = createEle("div");
 
-			detailRow.innerHTML = "row" + k;
+			detailRow.innerHTML = goals[btns[i]].details[k];
 			detailRow.className = "detailRow w3-container w3-card-2";
 
 			addBtnDetails.append(detailRow);
 		}
-		
-		addBtnDetails.className = "addBtnDetails w3-contain w3-monarch";
+
+		addBtnDetails.className = "addBtnDetails w3-contain w3-opacity w3-light-monarch";
 
 		addBtnTitle.innerHTML = btns[i];
 		addBtnTitle.className = "addBtnTitle w3-margin"
@@ -69,13 +70,13 @@ bodyBulld = (gd) => {
 		btnBox.append(btnHolder);
 	}
     // btnBox.innerHTML = "&nbsp;";
-	btnBox.className = "btnBox w3-card-4 w3-container w3-white w3-half w3-margin";
+	btnBox.className = "btnBox w3-card-4 w3-container w3-white w3-margin";
 
 	arena.append(btnBox,playBox);
 	arena.className = "arena w3-card-2 w3-padding w3-green";
 
 	mat.append(arena);
-	mat.className = "mat w3-contain w3-black w3-padding w3-card-2";
+	mat.className = "mat w3-contain w3-green w3-padding w3-card-2";
 
 	container.append(settings,mat);
 	container.className = "container w3-container w3-white";
