@@ -24,9 +24,7 @@ body {
 .money, .level,.addBtnDetails,.addBtnTitle {
 	cursor: default;
 }
-.playBox {
-	right: 0;
-}
+
 .btnHolder {
 	height: 60px;
 	line-height: 60px;
@@ -37,6 +35,7 @@ body {
 	float: right;
 	height: 61px;
 	line-height: 20px;
+	text-align: right;
 }
 .addBtnTitle {
 	float: clear;
@@ -54,12 +53,9 @@ body {
 	display: flex;
   flex-direction: row;
   height: 90%;
+  overflow-y: scroll;
 }
-.arena,.playBox {
-	display: flex;
-	flex-direction: row;
-	flex-grow: 1;
-}
+
 .btnBox {
 	overflow: auto;
 }
@@ -71,21 +67,63 @@ body {
 /*MEDIA QUERIES*/
 /*600px and down*/
 @media only screen and (max-width: 600px) {
-
+  .btnBox {
+		width: 100%;
+		float: left;
+	}
+	.playBox {
+		width: 100%;
+		float: left;
+		height: 100vh !important;
+	}
+	.arena,.playBox {
+		display: flex;
+		flex-direction: column;
+		flex-grow: .5;
+		
+	}
 }
 /*600px and up*/
 @media only screen and (min-width: 600px) {
-
+	.btnBox {
+		width: 50%;
+	}
+	.arena,.playBox {
+		display: flex;
+		flex-direction: row;
+		flex-grow: 1;
+	}
 }
 /*768px and up*/
 @media only screen and (min-width: 768px) {
-	
+	.btnBox {
+		width: 50%;
+	}
+	.arena,.playBox {
+		display: flex;
+		flex-direction: row;
+		flex-grow: 1;
+	}
 } 
 /*992px and up*/
 @media only screen and (min-width: 992px) {
-
+  .btnBox {
+		width: 50%;
+	}
+	.arena,.playBox {
+		display: flex;
+		flex-direction: row;
+		flex-grow: 1;
+	}
 } 
 /*1200px and up*/
 @media only screen and (min-width: 1200px) {
-
+	.btnBox {
+		width: 50%;
+	}
+	.arena,.playBox {
+		display: flex;
+		flex-direction: row;
+		flex-grow: 1;
+	}
 }
