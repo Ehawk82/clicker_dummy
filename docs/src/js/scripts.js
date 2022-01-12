@@ -12,8 +12,8 @@ bodyBulld = (gd) => {
 	const container = createEle("div"),
 	      logger = createEle("div"),
 	      settings = createEle("div"),
-	      level = createEle("span"),
-	      money = createEle("span"),
+	      level = createEle("div"),
+	      money = createEle("div"),
 	      playBox = createEle("div"),
 	      btnBox = createEle("div"),
 	      arena = createEle("div"),
@@ -21,10 +21,10 @@ bodyBulld = (gd) => {
 
 	//
 	level.innerHTML = "LEVEL: " + gd.level;
-	level.className = "level w3-white w3-half w3-center";
+	level.className = "level w3-white w3-center";
 
 	money.innerHTML = "💲" + gd.money;
-	money.className = "money w3-white w3-half w3-center";
+	money.className = "money w3-white w3-center";
 
 	settings.append(level,money);
 	settings.className = "settings w3-contain";

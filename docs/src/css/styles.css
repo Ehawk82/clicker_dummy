@@ -51,10 +51,11 @@ body {
 .mat {
 	display: flex;
   flex-direction: row;
-  
-
 }
-
+.money,.level {
+   width: 50% !important;
+   float: left;
+}
 .btnBox {
 	overflow: auto;
 }
