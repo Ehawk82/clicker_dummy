@@ -24,7 +24,6 @@ body {
 .money, .level,.addBtnDetails,.addBtnTitle {
 	cursor: default;
 }
-
 .btnHolder {
 	height: 60px;
 	line-height: 60px;
@@ -52,8 +51,8 @@ body {
 .mat {
 	display: flex;
   flex-direction: row;
-  height: 90%;
-  overflow-y: scroll;
+  
+
 }
 
 .btnBox {
@@ -76,6 +75,12 @@ body {
 		float: left;
 		height: 100vh !important;
 	}
+	.mat {
+    overflow: scroll;
+	}
+	.arena {
+		width: 110vw !important;
+	}
 	.arena,.playBox {
 		display: flex;
 		flex-direction: column;
@@ -88,16 +93,23 @@ body {
 	.btnBox {
 		width: 50%;
 	}
+	.mat {
+		height: 90%;
+	}
 	.arena,.playBox {
 		display: flex;
 		flex-direction: row;
 		flex-grow: 1;
+
 	}
 }
 /*768px and up*/
 @media only screen and (min-width: 768px) {
 	.btnBox {
 		width: 50%;
+	}
+	.mat {
+		height: 90%;
 	}
 	.arena,.playBox {
 		display: flex;
@@ -110,6 +122,9 @@ body {
   .btnBox {
 		width: 50%;
 	}
+	.mat {
+		height: 90%;
+	}
 	.arena,.playBox {
 		display: flex;
 		flex-direction: row;
@@ -120,6 +135,9 @@ body {
 @media only screen and (min-width: 1200px) {
 	.btnBox {
 		width: 50%;
+	}
+	.mat {
+		flex-grow: 1;
 	}
 	.arena,.playBox {
 		display: flex;

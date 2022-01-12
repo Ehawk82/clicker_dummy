@@ -73,10 +73,10 @@ bodyBulld = (gd) => {
 	btnBox.className = "btnBox w3-card-4 w3-container w3-white w3-margin";
 
 	arena.append(btnBox,playBox);
-	arena.className = "arena w3-green";
+	arena.className = "arena w3-contain w3-green w3-margin";
 
 	mat.append(arena);
-	mat.className = "mat w3-container w3-green w3-padding";
+	mat.className = "mat w3-contain w3-green w3-padding";
 
 	container.append(settings,mat);
 	container.className = "container w3-contain w3-white";
