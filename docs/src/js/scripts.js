@@ -42,7 +42,7 @@ bodyBulld = (gd) => {
 		for (var k = 0; k < 3; k++) {
 			const detailRow = createEle("div");
 
-			detailRow.innerHTML = goals[btns[i]].details[k];
+			detailRow.innerHTML = gd.gls[btns[i]].details[k];
 			detailRow.className = "detailRow w3-container w3-card-2";
 
 			addBtnDetails.append(detailRow);
