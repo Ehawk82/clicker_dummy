@@ -32,14 +32,13 @@ bodyBulld = (gd) => {
 	playBox.innerHTML = "playbox";
 	playBox.className = "playBox w3-card-4 w3-container w3-white w3-margin";
 
-	for (var i = 1; i < btns.length; i++) {
+	for (var i = 0; i < btns.length; i++) {
 		const btnHolder = createEle("p"),
 			  addBtnLabel = createEle("div"),
 			  addBtnTitle = createEle("span"),
 			  addBtnDetails = createEle("div"),
 			  addBtn = createEle("button");
 		//
-		let z = i + 1;
 		for (var k = 0; k < 3; k++) {
 			const detailRow = createEle("div");
 
