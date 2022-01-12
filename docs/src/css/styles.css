@@ -58,7 +58,9 @@ body {
 .btnBox {
 	overflow: auto;
 }
-
+.container {
+	height: 100vh;
+}
 /*ID*/
 
 /*KEYFRAMES*/
@@ -77,6 +79,7 @@ body {
 	}
 	.mat {
     overflow: scroll;
+    width: calc(100% - 10px);
 	}
 	.arena {
 		width: 110vw !important;
@@ -130,14 +133,14 @@ body {
 		flex-direction: row;
 		flex-grow: 1;
 	}
-} 
+}
 /*1200px and up*/
 @media only screen and (min-width: 1200px) {
 	.btnBox {
 		width: 50%;
 	}
 	.mat {
-		flex-grow: 1;
+		
 	}
 	.arena,.playBox {
 		display: flex;

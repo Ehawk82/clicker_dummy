@@ -79,12 +79,13 @@ bodyBulld = (gd) => {
 	mat.className = "mat w3-contain w3-green w3-padding";
 
 	container.append(settings,mat);
-	container.className = "container w3-contain w3-white";
+	container.className = "container w3-contain w3-green";
 
 	logger.innerHTML = " logger";
 	logger.className = "logger w3-black w3-bottom w3-text-white";
 
 	body.append(container,logger);
+	body.className = "w3-green";
 };
 window.onload = () => {
 	init();
