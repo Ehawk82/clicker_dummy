@@ -40,9 +40,16 @@ bodyBulld = (gd) => {
 			  addBtn = createEle("button");
 		//
 		for (var k = 0; k < 3; k++) {
-			const detailRow = createEle("div");
+			const detailRow = createEle("div"),
+			      paraContent = createEle("span"),
+			      dataContent = createEle("span");
 
-			detailRow.innerHTML = gd.gls[btns[i]].details[k];
+			paraContent.innerHTML = gd.gls[btns[i]].details[k].content;
+			paraContent.className = "paraContent w3-left";
+
+			dataContent.innerHTML = gd.gls[btns[i]].details[k].data;
+
+			detailRow.append(paraContent,dataContent);
 			detailRow.className = "detailRow w3-container w3-card-2";
 
 			addBtnDetails.append(detailRow);
