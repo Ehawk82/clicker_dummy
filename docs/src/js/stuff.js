@@ -13,7 +13,7 @@ var goals = {
 	},
 	"Goal 2": {
 		details: {
-			0: {content:"COST",data:1},
+			0: {content:"COST",data:2},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -21,7 +21,7 @@ var goals = {
 	},
 	"Goal 3": {
 		details: {
-			0: {content:"COST",data:1},
+			0: {content:"COST",data:3},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -29,7 +29,7 @@ var goals = {
 	},
 	"Goal 4": {
 		details: {
-			0: {content:"COST",data:1},
+			0: {content:"COST",data:4},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -37,7 +37,7 @@ var goals = {
 	},
 	"Goal 5": {
 		details: {
-			0: {content:"COST",data:1},
+			0: {content:"COST",data:5},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -45,7 +45,7 @@ var goals = {
 	},
 	"Goal 6": {
 		details: {
-			0: {content:"COST",data:1},
+			0: {content:"COST",data:6},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -53,7 +53,7 @@ var goals = {
 	},
 	"Goal 7": {
 		details: {
-			0: {content:"COST",data:1},
+			0: {content:"COST",data:7},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -61,7 +61,7 @@ var goals = {
 	},
 	"Goal 8": {
 		details: {
-			0: {content:"COST",data:5},
+			0: {content:"COST",data:8},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -69,7 +69,7 @@ var goals = {
 	},
 	"Goal 9": {
 		details: {
-			0: {content:"COST",data:10},
+			0: {content:"COST",data:9},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -77,7 +77,7 @@ var goals = {
 	},
 	"Goal 10": {
 		details: {
-			0: {content:"COST",data:50},
+			0: {content:"COST",data:10},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -85,7 +85,7 @@ var goals = {
 	},
 	"Goal 11": {
 		details: {
-			0: {content:"COST",data:100},
+			0: {content:"COST",data:50},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -93,7 +93,7 @@ var goals = {
 	},
 	"Goal 12": {
 		details: {
-			0: {content:"COST",data:500},
+			0: {content:"COST",data:100},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -101,7 +101,7 @@ var goals = {
 	},
 	"Goal 13": {
 		details: {
-			0: {content:"COST",data:1000},
+			0: {content:"COST",data:500},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -109,7 +109,7 @@ var goals = {
 	},
 	"Goal 14": {
 		details: {
-			0: {content:"COST",data:5000},
+			0: {content:"COST",data:1000},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -117,7 +117,7 @@ var goals = {
 	},
 	"Goal 15": {
 		details: {
-			0: {content:"COST",data:10000},
+			0: {content:"COST",data:5000},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -125,7 +125,7 @@ var goals = {
 	},
 	"Goal 16": {
 		details: {
-			0: {content:"COST",data:50000},
+			0: {content:"COST",data:10000},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -133,7 +133,7 @@ var goals = {
 	},
 	"Goal 17": {
 		details: {
-			0: {content:"COST",data:100000},
+			0: {content:"COST",data:50000},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -141,7 +141,7 @@ var goals = {
 	},
 	"Goal 18": {
 		details: {
-			0: {content:"COST",data:500000},
+			0: {content:"COST",data:100000},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -149,7 +149,7 @@ var goals = {
 	},
 	"Goal 19": {
 		details: {
-			0: {content:"COST",data:1000000},
+			0: {content:"COST",data:500000},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
@@ -157,7 +157,7 @@ var goals = {
 	},
 	"Goal 20": {
 		details: {
-			0: {content:"COST",data:5000000},
+			0: {content:"COST",data:1000000},
 			1: {content:"AMOUNT",data:0},
 			2: {content:"PRODUCTION",data:0}
 		},
