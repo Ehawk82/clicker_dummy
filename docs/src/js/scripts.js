@@ -42,16 +42,23 @@ bodyBulld = (gd) => {
 		for (var k = 0; k < 3; k++) {
 			const detailRow = createEle("div"),
 			      paraContent = createEle("span"),
-			      dataContent = createEle("span");
+			      dataDesc = createEle("div");
+			      dataContent = createEle("span"),
+			      parentGoal = gd.gls[btns[i]];
 
-			paraContent.innerHTML = gd.gls[btns[i]].details[k].content;
+			//
+			dataDesc.innerHTML = parentGoal.details[k].desc;
+			dataDesc.className = "dataDesc w3-monarch w3-center w3-hide";
+
+			paraContent.innerHTML = parentGoal.details[k].content;
 			paraContent.className = "paraContent w3-left";
 
-			dataContent.innerHTML = gd.gls[btns[i]].details[k].data;
+			dataContent.innerHTML = parentGoal.details[k].data;
 
-			detailRow.append(paraContent,dataContent);
+			detailRow.append(paraContent,dataContent,dataDesc);
 			detailRow.className = "detailRow w3-container w3-card-2";
-
+			detailRow.onmouseover = showDescription(paraContent,dataContent,dataDesc,parentGoal,detailRow);
+			detailRow.onmouseout = hideDescription(paraContent,dataContent,dataDesc,parentGoal,detailRow);
 			addBtnDetails.append(detailRow);
 		}
 
@@ -75,7 +82,7 @@ bodyBulld = (gd) => {
 
 		btnBox.append(btnHolder);
 	}
-    // btnBox.innerHTML = "&nbsp;";
+
 	btnBox.className = "btnBox w3-card-4 w3-container w3-white w3-margin";
 
 	arena.append(btnBox,playBox);
@@ -92,6 +99,24 @@ bodyBulld = (gd) => {
 
 	body.append(container,logger);
 	body.className = "w3-green";
+},
+hideDescription = (paraContent,dataContent,dataDesc,parentGoal,detailRow) => {
+	return () => {
+		detailRow.classList.remove("w3-contain");
+		detailRow.classList.add("w3-container");
+		paraContent.classList.remove("w3-hide");
+		dataContent.classList.remove("w3-hide");
+		dataDesc.classList.add("w3-hide");
+	}
+};
+showDescription = (paraContent,dataContent,dataDesc,parentGoal,detailRow) => {
+	return () => {
+		detailRow.classList.remove("w3-container");
+		detailRow.classList.add("w3-contain");
+		paraContent.classList.add("w3-hide");
+		dataContent.classList.add("w3-hide");
+		dataDesc.classList.remove("w3-hide");
+	}
 };
 window.onload = () => {
 	init();
