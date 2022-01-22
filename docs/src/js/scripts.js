@@ -54,6 +54,7 @@ bodyBulld = (gd) => {
 			paraContent.className = "paraContent w3-left";
 
 			dataContent.innerHTML = parentGoal.details[k].data;
+			dataContent.id = "dataContent_" + i + "_" + k;
 
 			detailRow.append(paraContent,dataContent,dataDesc);
 			detailRow.className = "detailRow w3-container w3-card-2";
@@ -71,6 +72,7 @@ bodyBulld = (gd) => {
 		addBtnLabel.className = "addBtnLabel w3-contain";
 
 		addBtn.innerHTML = "+";
+		addBtn.onclick = addUnit(gd,this,i);
 		addBtn.className = "addBtn w3-button w3-hover-light-green w3-green";
 
 		btnHolder.append(addBtn,addBtnLabel);
@@ -99,6 +101,45 @@ bodyBulld = (gd) => {
 
 	body.append(container,logger);
 	body.className = "w3-green";
+
+	//fireTicker();
+},
+fireTicker = () => {
+	var timer = ()=> {
+		setTimeout(()=>{
+			console.log("time is running");
+			timer();
+		},5000);
+	}
+	timer();
+},
+addUnit = (gd,t,i) => {
+	return () => {
+		var parentUnit = gd.gls[t.btns[i]].details,
+		    myAmount = parentUnit[0].data,
+		    myBtn = bySelAll(".addBtn");
+
+		//
+		if(myAmount < gd.money){
+            gd.gls[t.btns[i]].details[0].data = gd.gls[t.btns[i]].details[0].data + 1; 
+			gd.gls[t.btns[i]].details[1].data = gd.gls[t.btns[i]].details[1].data + 1;
+
+	        
+	        gd.money = gd.money - gd.gls[t.btns[i]].details[0].data;
+	        
+	        var dataContentById = bySel("#dataContent_" + i + "_" + 1),
+	            dataCostById = bySel("#dataContent_" + i + "_" + 0)
+	            money = bySel(".money");
+	        
+			saveLS("gameData",gd);
+
+			money.innerHTML = "💲" + gd.money;
+			dataCostById.innerHTML = gd.gls[t.btns[i]].details[0].data
+			dataContentById.innerHTML = gd.gls[t.btns[i]].details[1].data;
+		} else {
+			return myBtn[i].disabled = true
+		}
+	}
 },
 hideDescription = (paraContent,dataContent,dataDesc,parentGoal,detailRow) => {
 	return () => {
