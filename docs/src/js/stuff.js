@@ -166,7 +166,7 @@ var goals = {
 };
 
 var gamedata = {
-	money:100,
-	level:2,
+	money:10,
+	level:1,
 	gls: goals
 };

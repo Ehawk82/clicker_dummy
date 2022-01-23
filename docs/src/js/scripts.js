@@ -1,6 +1,6 @@
 const init = () => {
 	const gd = parseLS("gameData");
-	if(!gd){
+	if(!gd || gd == null){
 		LSinit("gameData", gamedata);
 		const gd = parseLS("gameData");
 		bodyBulld(gd);
@@ -88,13 +88,13 @@ bodyBulld = (gd) => {
 	btnBox.className = "btnBox w3-card-4 w3-container w3-white w3-margin";
 
 	arena.append(btnBox,playBox);
-	arena.className = "arena w3-contain w3-green w3-margin";
+	arena.className = "arena w3-contain w3-grey w3-margin";
 
 	mat.append(arena);
-	mat.className = "mat w3-contain w3-green w3-padding";
+	mat.className = "mat w3-contain w3-grey w3-padding";
 
 	container.append(settings,mat);
-	container.className = "container w3-contain w3-green";
+	container.className = "container w3-contain w3-grey";
 
 	logger.innerHTML = " logger";
 	logger.className = "logger w3-black w3-bottom w3-text-white";
@@ -102,16 +102,33 @@ bodyBulld = (gd) => {
 	body.append(container,logger);
 	body.className = "w3-green";
 
-	//fireTicker();
+	//fireTicker(gd);
 },
-fireTicker = () => {
-	var timer = ()=> {
+fireTicker = (gd) => {
+	var timer = (gd)=> {
 		setTimeout(()=>{
-			console.log("time is running");
-			timer();
+			var money = bySel(".money"),
+			    myBtn = bySelAll(".addBtn");
+
+			for (var t = 0; t < btns.length; t++) {
+				gd.money = gd.money + gd.gls[btns[t]].details[2].data;
+				if(gd.gls[btns[t]].details[0].data < gd.money){
+					myBtn[t].disabled = false;
+				} else {
+					myBtn[t].disabled = true;
+				}
+			}
+			
+			saveLS("gameData",gd)
+			//console.log(money);
+			money.innerHTML = "💲" + gd.money;
+
+
+
+			timer(gd);
 		},5000);
 	}
-	timer();
+	timer(gd);
 },
 addUnit = (gd,t,i) => {
 	return () => {
@@ -121,23 +138,24 @@ addUnit = (gd,t,i) => {
 
 		//
 		if(myAmount < gd.money){
-            gd.gls[t.btns[i]].details[0].data = gd.gls[t.btns[i]].details[0].data + 1; 
+			gd.money = gd.money - gd.gls[t.btns[i]].details[0].data;
+            gd.gls[t.btns[i]].details[0].data = gd.gls[t.btns[i]].details[0].data + gd.gls[t.btns[i]].details[2].data; 
 			gd.gls[t.btns[i]].details[1].data = gd.gls[t.btns[i]].details[1].data + 1;
-
-	        
-	        gd.money = gd.money - gd.gls[t.btns[i]].details[0].data;
+			gd.gls[t.btns[i]].details[2].data = gd.gls[t.btns[i]].details[2].data + gd.gls[t.btns[i]].details[1].data;
 	        
 	        var dataContentById = bySel("#dataContent_" + i + "_" + 1),
-	            dataCostById = bySel("#dataContent_" + i + "_" + 0)
+	            dataCostById = bySel("#dataContent_" + i + "_" + 0),
+	            dataProdById = bySel("#dataContent_" + i + "_" + 2),
 	            money = bySel(".money");
 	        
 			saveLS("gameData",gd);
 
 			money.innerHTML = "💲" + gd.money;
-			dataCostById.innerHTML = gd.gls[t.btns[i]].details[0].data
+			dataCostById.innerHTML = gd.gls[t.btns[i]].details[0].data;
 			dataContentById.innerHTML = gd.gls[t.btns[i]].details[1].data;
+			dataProdById.innerHTML = gd.gls[t.btns[i]].details[2].data;
 		} else {
-			return myBtn[i].disabled = true
+			return myBtn[i].disabled = true;
 		}
 	}
 },
