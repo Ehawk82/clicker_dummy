@@ -45,8 +45,8 @@ bodyBulld = (gd) => {
 			      dataDesc = createEle("div");
 			      dataContent = createEle("span"),
 			      parentGoal = gd.gls[btns[i]];
-
 			//
+
 			dataDesc.innerHTML = parentGoal.details[k].desc;
 			dataDesc.className = "dataDesc w3-monarch w3-center w3-hide";
 
@@ -74,6 +74,11 @@ bodyBulld = (gd) => {
 		addBtn.innerHTML = "+";
 		addBtn.onclick = addUnit(gd,this,i);
 		addBtn.className = "addBtn w3-button w3-hover-light-green w3-green";
+		if (gd.gls[btns[i]].details[0].data < gd.money) {
+			addBtn.disabled = false;
+		} else {
+			addBtn.disabled = true;
+		}
 
 		btnHolder.append(addBtn,addBtnLabel);
 		btnHolder.className = "btnHolder w3-contain w3-card-2";
