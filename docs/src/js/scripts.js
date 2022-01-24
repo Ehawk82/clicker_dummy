@@ -109,9 +109,6 @@ bodyBulld = (gd) => {
 
 	//fireTicker(gd);
 },
-disableFunc = (gd,i) => {
-
-},
 fireTicker = (gd) => {
 	var timer = (gd)=> {
 		setTimeout(()=>{
@@ -164,11 +161,23 @@ addUnit = (gd,t,i) => {
 			dataProdById.innerHTML = gd.gls[t.btns[i]].details[2].data;
 			
 		}
-		if(myAmount > gd.money){
-			myBtn[i].disabled = true;
+		for (var g = 0; g < btns.length; g++) {
+			if(gd.gls[btns[g]].details[0].data > gd.money){
+				myBtn[g].disabled = true;
+			} else {
+				myBtn[g].disabled = false;
+			}
 		}
-		//if(gd.gls[t.btns[i]].details[1].data);
+		if(gd.gls[t.btns[i]].details[1].data === 100) {
+			bumpLevel(gd);
+		}
 	}
+},
+bumpLevel = (gd) => {
+	gd.level++;
+	saveLS("gameData",gd);
+	body.innerHTML = "";
+	bodyBulld(gd);
 },
 hideDescription = (paraContent,dataContent,dataDesc,parentGoal,detailRow) => {
 	return () => {
