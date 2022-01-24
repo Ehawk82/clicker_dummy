@@ -109,6 +109,9 @@ bodyBulld = (gd) => {
 
 	//fireTicker(gd);
 },
+disableFunc = (gd,i) => {
+
+},
 fireTicker = (gd) => {
 	var timer = (gd)=> {
 		setTimeout(()=>{
@@ -159,8 +162,9 @@ addUnit = (gd,t,i) => {
 			dataCostById.innerHTML = gd.gls[t.btns[i]].details[0].data;
 			dataContentById.innerHTML = gd.gls[t.btns[i]].details[1].data;
 			dataProdById.innerHTML = gd.gls[t.btns[i]].details[2].data;
-		} else {
-			return myBtn[i].disabled = true;
+		}
+		if(myAmount > gd.money){
+			myBtn[i].disabled = true;
 		}
 	}
 },
