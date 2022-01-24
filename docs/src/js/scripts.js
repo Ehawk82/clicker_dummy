@@ -162,10 +162,12 @@ addUnit = (gd,t,i) => {
 			dataCostById.innerHTML = gd.gls[t.btns[i]].details[0].data;
 			dataContentById.innerHTML = gd.gls[t.btns[i]].details[1].data;
 			dataProdById.innerHTML = gd.gls[t.btns[i]].details[2].data;
+			
 		}
 		if(myAmount > gd.money){
 			myBtn[i].disabled = true;
 		}
+		//if(gd.gls[t.btns[i]].details[1].data);
 	}
 },
 hideDescription = (paraContent,dataContent,dataDesc,parentGoal,detailRow) => {
